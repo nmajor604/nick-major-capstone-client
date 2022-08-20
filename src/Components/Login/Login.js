@@ -30,18 +30,18 @@ class Login extends Component {
   render() {
     return !this.props.user ? (
       <>
-        <div className="hero is-primary ">
-          <div className="hero-body container">
-            <h4 className="title">Login</h4>
+        <div>
+          <div>
+            <h4>Login</h4>
           </div>
         </div>
         <br />
         <br />
         <form onSubmit={this.login}>
-          <div className="columns is-mobile is-centered">
-            <div className="column is-one-third">
-              <div className="field">
-                <label className="label">Email: </label>
+          <div>
+            <div>
+              <div>
+                <label>Email: </label>
                 <input
                   className="input"
                   type="email"
@@ -49,8 +49,8 @@ class Login extends Component {
                   onChange={this.handleChange}
                 />
               </div>
-              <div className="field">
-                <label className="label">Password: </label>
+              <div>
+                <label>Password: </label>
                 <input
                   className="input"
                   type="password"
@@ -59,12 +59,10 @@ class Login extends Component {
                 />
               </div>
               {this.state.error && (
-                <div className="has-text-danger">{this.state.error}</div>
+                <div>{this.state.error}</div>
               )}
-              <div className="field is-clearfix">
-                <button
-                  className="button is-primary is-outlined is-pulled-right"
-                >
+              <div>
+                <button>
                   Submit
                 </button>
               </div>
@@ -73,7 +71,7 @@ class Login extends Component {
         </form>
       </>
     ) : (
-      <Redirect to="/products" />
+      <Redirect to="/seller-home" />
     );
   }
 }

@@ -3,11 +3,11 @@ import { Redirect } from "react-router-dom";
 import axios from 'axios';
 
 const initState = {
-  name: "",
-  price: "",
-  stock: "",
-  shortDesc: "",
-  description: ""
+  title: "",
+  condition: "",
+  location: "",
+  description: "",
+  price: ""
 };
 
 class ListingUploadForm extends Component {
@@ -18,33 +18,32 @@ class ListingUploadForm extends Component {
 
   save = async (e) => {
     e.preventDefault();
-    const { name, price, stock, shortDesc, description } = this.state;
+    const { title, condition, location, description, price } = this.state;
 
-    if (name && price) {
-      const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
+    if (title && condition && location && description && price ) {
 
       await axios.post(
         'http://localhost:5050/listings',
-        { id, name, price, stock, shortDesc, description },
+        { title, condition, location, description, price },
       )
 
       this.props.addProduct(
         {
-          name,
-          price,
-          shortDesc,
+          title,
+          condition,
+          location,
           description,
-          stock: stock || 0
+          price
         },
         () => this.setState(initState)
       );
       this.setState(
-        { flash: { status: 'is-success', msg: 'Product created successfully' }}
+        { flash: { status: 'is-success', msg: 'Successfully added new listing' }}
       );
 
     } else {
       this.setState(
-        { flash: { status: 'is-danger', msg: 'Please enter name and price' }}
+        { flash: { status: 'is-danger', msg: 'Please fill out all fields' }}
       );
     }
   };
