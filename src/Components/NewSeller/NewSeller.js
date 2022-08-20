@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-// import './NewListing.scss';
+// import './NewSeller.scss';
 
-class NewListing extends React.Component {
+class NewSeller extends React.Component {
     state = {
         selectedOption: ""
     };
@@ -16,13 +16,10 @@ class NewListing extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
             axios
-            .post('http://localhost:5050/listings', {
-                title: e.target.name.title,
-                condition: e.target.condition.value,
+            .post('http://localhost:5050/sellers', {
+                name: e.target.name.value,
                 location: e.target.location.value,
-                description: e.target.description.value,
-                price: e.target.price.value
-
+                email: e.target.email.value,
             })
             .then((res) => {
                 console.log(res);
@@ -43,28 +40,18 @@ class NewListing extends React.Component {
                     placeholder='Choose an unique seller name'
                     name='name'
                 />
-                <label>Condition</label>
-                <input
-                    placeholder='Enter a one word description of the item condition'
-                    name='condition'
-                />
                 <label>Location</label>
                 <input
                     placeholder='Enter your city'
                     name='location'
                 />
-                <label>Description</label>
+                <label>Email</label>
                 <input
-                    placeholder='Write a brief description'
-                    name='description'
-                />
-                <label>Price</label>
-                <input
-                    placeholder='Name a price'
-                    name='price'
+                    placeholder='Enter your email address'
+                    name='email'
                 />
                 <button>
-                    <p>Post Your Item</p>
+                    <p>Sign Up and Start Selling!</p>
                 </button>
                 <Link to="/">
                     <p>Cancel</p>
@@ -74,4 +61,4 @@ class NewListing extends React.Component {
     }
 }
 
-export default NewListing;
+export default NewSeller;
