@@ -37,7 +37,11 @@ class NewListing extends React.Component {
 
     render(){
         return(
-            <form onSubmit={this.handleSubmit}>
+            <>
+                <div className='content__header'>
+                    <h4 className='content__header--title'>New Listing</h4>
+                </div>
+                <form onSubmit={this.handleSubmit}>
                 <label>Name</label>
                 <input
                     placeholder='Choose an unique seller name'
@@ -70,6 +74,9 @@ class NewListing extends React.Component {
                     <p>Cancel</p>
                 </Link>
             </form>
+            
+            </>
+            
         )
     }
 }

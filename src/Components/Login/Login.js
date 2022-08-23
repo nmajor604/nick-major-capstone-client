@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -30,9 +31,9 @@ class Login extends Component {
   render() {
     return !this.props.user ? (
       <>
-        <div>
+        <div className="content__header">
           <div>
-            <h4>Login</h4>
+            <h4 className="content__header--title">Login</h4>
           </div>
         </div>
         <br />
@@ -71,7 +72,7 @@ class Login extends Component {
         </form>
       </>
     ) : (
-      <Redirect to="/seller-home" />
+      <Link to="/seller-home" />
     );
   }
 }

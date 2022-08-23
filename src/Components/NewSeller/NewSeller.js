@@ -34,29 +34,37 @@ class NewSeller extends React.Component {
 
     render(){
         return(
-            <form onSubmit={this.handleSubmit}>
-                <label>Name</label>
-                <input
-                    placeholder='Choose an unique seller name'
-                    name='name'
-                />
-                <label>Location</label>
-                <input
-                    placeholder='Enter your city'
-                    name='location'
-                />
-                <label>Email</label>
-                <input
-                    placeholder='Enter your email address'
-                    name='email'
-                />
-                <button>
-                    <p>Sign Up and Start Selling!</p>
-                </button>
-                <Link to="/">
-                    <p>Cancel</p>
-                </Link>
-            </form>
+            <>
+                <div className='signup__header'>
+                    <h4 className='signup__header--title'>New Seller Sign Up</h4>
+                </div>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Name</label>
+                    <input
+                        placeholder='Choose an unique seller name'
+                        name='name'
+                    />
+                    <label>Location</label>
+                    <input
+                        placeholder='Enter your city'
+                        name='location'
+                    />
+                    <label>Email</label>
+                    <input
+                        placeholder='Enter your email address'
+                        name='email'
+                    />
+                    <button>
+                        <p>Sign Up and Start Selling!</p>
+                    </button>
+                    <Link to="/">
+                        <p>Cancel</p>
+                    </Link>
+                </form>
+                            
+                            
+            </>
+            
         )
     }
 }
