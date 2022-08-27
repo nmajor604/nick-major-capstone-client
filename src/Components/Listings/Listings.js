@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './Listings.css';
 import axios from "axios";
-// import ListingDetail from '../ListingDetail/ListingDetail';
 
 class Listings extends React.Component {
     state = {

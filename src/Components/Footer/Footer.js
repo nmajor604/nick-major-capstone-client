@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className='footer'>
       <div className='footer__copyright'>
-        <p>&copy; 2022 Capstone Productions</p>
+        <p>&copy; 2022 Capstone Productions&trade;</p>
       </div>
       
     </footer>

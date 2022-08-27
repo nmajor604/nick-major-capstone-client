@@ -11,3 +11,7 @@
 .form__signup > div {
     margin-bottom: 1.5rem;
 }
+
+input {
+    width: 100%;
+}

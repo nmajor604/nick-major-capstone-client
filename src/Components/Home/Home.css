@@ -1,5 +1,7 @@
 .home__body {
-    background-color: #fefbd8;
+    background-image: url(../../assets/todd-kent-onnJOfF-okU-unsplash.jpg);
+    background-color: white;
+    background-position: center;
 }
 
 
@@ -10,12 +12,24 @@
     padding: 2.5rem;
 }
 
+.header__title--1 {
+    background-color: rosybrown;
+}
+.header__title--2 {
+    background-color: paleturquoise;
+}
+.header__title--3 {
+    background-color: mediumpurple;
+}
+.header__title--4 {
+    background-color: bisque;
+}
 .header__container > div {
     padding: 1.5rem;
     margin: 0.5rem;
-    background-color: #80ced6;
+
     color: white;
-    border-radius: 5%;
+    border-radius: 10px;
 }
 
 .link__container {
@@ -26,8 +40,10 @@
 }
 
 .divlink {
-    height: 20vh;
+    height: auto;
     width: 20vw;
     background-color: #80ced6;
     text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 10px;
 }

@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className='header'>
       <div className='header__logo'>
-        <Link to="/"><h1>Connex</h1></Link>
+        <Link to="/"><h1>Connex&trade;</h1></Link>
       </div>
       <div className='header__links--container'>
         <div><Link to ="/seller-signup" className='header__link'><div>SIGN UP</div></Link></div>

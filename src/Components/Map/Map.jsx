@@ -1,44 +1,43 @@
-// AIzaSyDz7IBsAKFc8kkx8VPObQ-0-ggCH7VpKrU
+import React, { Component } from "react";
+import GoogleMapReact from "google-map-react";
 
+class Map extends Component {
 
+    state = {
+        center: {
+            lat: 49.282730,
+            lng: -123.120735,
+        },
+        zoom:12
+    }
 
-import React from 'react'
-import GoogleMapReact from 'google-map-react'
-// import './map.css'
-// import { Icon } from '@iconify/react'
-// import locationIcon from '@iconify/icons-mdi/map-marker'
+    centerMyLocation = () => {
+        this.setState({
+            center: {
+                lat: this.props.userLocation.lat,
+                lng: this.props.userLocation.lng,
+            }
+        })
+    }
 
-// const location = {
-//     address: '1600 Amphitheatre Parkway, Mountain View, california.',
-//     lat: 37.42216,
-//     lng: -122.08427,
-//   }
+    render(){
+        return(
+            <div style={{width: 500, height: 400, margin: 'auto', marginTop:40}}>
+                <GoogleMapReact
+                    className='react-map'
+                    bootstrapURLKeys={{key: 'AIzaSyDz7IBsAKFc8kkx8VPObQ-0-ggCH7VpKrU'}}
+                    defaultCenter={{ lat: 49.282730, lng: -123.120735 }}
+                    defaultZoom={this.state.zoom}
+                    center={this.state.center}
+        onChange={({center, zoom}) => {this.setState({center: center, zoom: zoom})}}
+                    >
 
-const LocationPin = ({ text }) => (
-    <div className="pin">
-      {/* <Icon icon={locationIcon} className="pin-icon" /> */}
-      <p className="pin-text">{text}</p>
-    </div>
-  )
+                    </GoogleMapReact>
+                    <button onClick={() => this.centerMyLocation()}>My Location</button>
+            </div>
+            
+        )
+    }
+};
 
-const Map = ({ location, zoomLevel }) => (
-    <div className="map">
-      <h2 className="map-h2">Come Visit Us At Our Campus</h2>
-  
-      <div className="google-map">
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyDz7IBsAKFc8kkx8VPObQ-0-ggCH7VpKrU' }}
-          defaultCenter={location}
-          defaultZoom={zoomLevel}
-        >
-          <LocationPin
-            lat={location.lat}
-            lng={location.lng}
-            text={location.address}
-          />
-        </GoogleMapReact>
-      </div>
-    </div>
-  )
-  
-  export default Map;
+export default Map;

@@ -57,9 +57,12 @@ class NewSeller extends React.Component {
                     />
                     </div>
                     
-                    <button className='ui button primary'>
-                        <p>Sign Up and Start Selling!</p>
-                    </button>
+                    <Link to="/add-item">
+                        <button className='ui button primary'>
+                            <p>Sign Up and Start Selling!</p>
+                        </button>
+                    </Link>
+                    
                     <Link to="/">
                         <p>Cancel</p>
                     </Link>

@@ -2,14 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ImageUpload from '../ImageUpload/ImageUpload';
-import { Button } from 'semantic-ui-react'
-
+import Map from '../Map/Map';
 
 import './NewListing.css';
 
 class NewListing extends React.Component {
     state = {
-        selectedOption: ""
+        selectedOption: "",
+        userLocation: {}
     };
 
     handleChange = (e) => {
@@ -38,6 +38,28 @@ class NewListing extends React.Component {
     
         e.target.reset();
         };
+
+
+    getUserLocation = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                this.setState({
+                    userLocation: {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    }
+                })
+                localStorage.setItem('userLocation', JSON.stringify({
+                    lat: position.coords.latitude,
+                        lng: position.coords.longitude, 
+                }))
+            })
+        }
+    }
+
+    componentDidMount = () => {
+        this.getUserLocation()
+    }
     
 
     render(){
@@ -49,13 +71,13 @@ class NewListing extends React.Component {
                     <div><p>All fields are required, as well as at least one photo.</p></div>
                     <div>
                                 <input
-                                    placeholder='Write a descriptive and catchy headline for your listing'
+                                    placeholder='Write a descriptive headline'
                                     name='title'
                                 />
                             </div>
                             <div>
                                 <input
-                                    placeholder='Enter a one word description of the item condition'
+                                    placeholder='Enter item condition'
                                     name='condition'
                                 />
                             </div>
@@ -78,91 +100,20 @@ class NewListing extends React.Component {
                                 />
                             </div>
                     
+                    
+                    <Link to='/listings'>
                     <button className='ui button primary'>
-                        <p>Login</p>
+                        <p>Post Your Item</p>
                     </button>
+                    </Link>
                     <Link to="/">
                         <p>Cancel</p>
                     </Link>
+                    <ImageUpload />
+                    <Map userLocation={this.state.userLocation} />
                 </form>               
-                </div>
-                
+                </div> 
             </>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            // <>
-                
-            //     <div className='form__container'>
-            //             <h4 className='content__header--title'>New Listing</h4>
-
-            //             <p>All fields are required, as well as uploading at least one photo.</p>
-
-            //             <form onSubmit={this.handleSubmit} className='form__body'>
-            //                 <div>
-            //                     <input
-            //                         placeholder='Write a descriptive and catchy headline for your listing'
-            //                         name='title'
-            //                     />
-            //                 </div>
-            //                 <div>
-            //                     <input
-            //                         placeholder='Enter a one word description of the item condition'
-            //                         name='condition'
-            //                     />
-            //                 </div>
-            //                 <div>
-            //                     <input
-            //                         placeholder='Enter your city'
-            //                         name='location'
-            //                     />
-            //                 </div>
-            //                 <div>
-            //                     <input
-            //                         placeholder='Write a brief description'
-            //                         name='description'
-            //                     />
-            //                 </div>
-            //                 <div>
-            //                     <input
-            //                         placeholder='Name a price'
-            //                         name='price'
-            //                     />
-            //                 </div>
-                            
-                            
-            //                 <button>
-            //                     <p>Post Your Item</p>
-            //                 </button>
-            //                 <Link to="/">
-            //                     <p>Cancel</p>
-            //                 </Link>
-            //                 <ImageUpload />
-            //                 <Button content='Primary' primary />
-
-            //             </form>
-            //     </div>
-            // </>
         )
     }
 }

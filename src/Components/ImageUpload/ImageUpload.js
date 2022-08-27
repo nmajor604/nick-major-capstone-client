@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './ImageUpload';
 const ImageUpload = () => {
 const [image, setImage ] = useState("");
 const [ url, setUrl ] = useState("");
@@ -19,14 +20,17 @@ setUrl(data.url)
 }
 return (
 <div>
-<div>
-<input type="file" onChange= {(e)=> setImage(e.target.files[0])}></input>
+<div className='upload__container'>
+    <input type="file" onChange= {(e)=> setImage(e.target.files[0])}></input>
 
-<button onClick={uploadImage}>Upload</button>
+    <button onClick={uploadImage}>Upload</button>
 </div>
 <div>
-<h1>Uploaded image will be displayed here</h1>
-<img src={url} alt="description"/>
+<h4>Preview your image here</h4>
+<img 
+src={url} 
+alt="description"
+width="125px"/>
 </div>
 </div>
 )
