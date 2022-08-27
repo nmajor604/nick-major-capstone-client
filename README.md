@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The client side code repo is nick-major-capstone-client and the corresponding server side code repo is nick-major-capstone-server.
+The corresponding MySql database user name is 'root', password 'Valeur341' and the name of the database is simply 'capstone'.
 
 ## Available Scripts
 
