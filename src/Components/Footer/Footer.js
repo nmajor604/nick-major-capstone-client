@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// import './Footer.scss';
+import './Footer.css';
 
 function Footer() {
 
   return (
-    <footer>
-        <div className='footer__links'>
-            <Link to ="/contact"><div>CONTACT INFO</div></Link>
-            <Link to ="/firsttime"><div>FIRST TIME?</div></Link>
-            <Link to ="/ourstory"><div>OUR STORY</div></Link>
-        </div>
+    <footer className='footer'>
+      <div className='footer__copyright'>
+        <p>&copy; 2022 Capstone Productions</p>
+      </div>
+      
     </footer>
-)
+    
+  )
   
 }
 

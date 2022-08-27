@@ -5,7 +5,7 @@ import ImageUpload from '../ImageUpload/ImageUpload';
 import { Button } from 'semantic-ui-react'
 
 
-// import './NewListing.scss';
+import './NewListing.css';
 
 class NewListing extends React.Component {
     state = {
@@ -26,6 +26,7 @@ class NewListing extends React.Component {
                 description: e.target.description.value,
                 price: e.target.price.value,
                 seller_id: '1',
+                image: '',
                 status: '1'
             })
             .then((res) => {
@@ -42,54 +43,126 @@ class NewListing extends React.Component {
     render(){
         return(
             <>
-                <div className='content__header'>
-                    <h4 className='content__header--title'>New Listing</h4>
+                <div className='signup__container'>
+                    <form className="form__signup" onSubmit={this.handleSubmit}>
+                    <div><h4>Start Selling!</h4></div>
+                    <div><p>All fields are required, as well as at least one photo.</p></div>
+                    <div>
+                                <input
+                                    placeholder='Write a descriptive and catchy headline for your listing'
+                                    name='title'
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    placeholder='Enter a one word description of the item condition'
+                                    name='condition'
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    placeholder='Enter your city'
+                                    name='location'
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    placeholder='Write a brief description'
+                                    name='description'
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    placeholder='Name a price'
+                                    name='price'
+                                />
+                            </div>
+                    
+                    <button className='ui button primary'>
+                        <p>Login</p>
+                    </button>
+                    <Link to="/">
+                        <p>Cancel</p>
+                    </Link>
+                </form>               
                 </div>
-                <div className='form__container'>
-                    <div className='form__instructions'>
-                        <p>All fields are required to be filled out, as well as uploading at least one photo.</p>
-                    </div>
-                    <div className='form__body'>
-                        <form onSubmit={this.handleSubmit}>
-                            <label>Title</label>
-                            <input
-                                placeholder='Write a descriptive and catchy headline for your listing'
-                                name='title'
-                            />
-                            <label>Condition</label>
-                            <input
-                                placeholder='Enter a one word description of the item condition'
-                                name='condition'
-                            />
-                            <label>Location</label>
-                            <input
-                                placeholder='Enter your city'
-                                name='location'
-                            />
-                            <label>Description</label>
-                            <input
-                                placeholder='Write a brief description'
-                                name='description'
-                            />
-                            <label>Price</label>
-                            <input
-                                placeholder='Name a price'
-                                name='price'
-                            />
-                            
-                            <button>
-                                <p>Post Your Item</p>
-                            </button>
-                            <Link to="/">
-                                <p>Cancel</p>
-                            </Link>
-                            <ImageUpload />
-                            <Button content='Primary' primary />
-
-                        </form>
-                    </div>
-                </div>
+                
             </>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            // <>
+                
+            //     <div className='form__container'>
+            //             <h4 className='content__header--title'>New Listing</h4>
+
+            //             <p>All fields are required, as well as uploading at least one photo.</p>
+
+            //             <form onSubmit={this.handleSubmit} className='form__body'>
+            //                 <div>
+            //                     <input
+            //                         placeholder='Write a descriptive and catchy headline for your listing'
+            //                         name='title'
+            //                     />
+            //                 </div>
+            //                 <div>
+            //                     <input
+            //                         placeholder='Enter a one word description of the item condition'
+            //                         name='condition'
+            //                     />
+            //                 </div>
+            //                 <div>
+            //                     <input
+            //                         placeholder='Enter your city'
+            //                         name='location'
+            //                     />
+            //                 </div>
+            //                 <div>
+            //                     <input
+            //                         placeholder='Write a brief description'
+            //                         name='description'
+            //                     />
+            //                 </div>
+            //                 <div>
+            //                     <input
+            //                         placeholder='Name a price'
+            //                         name='price'
+            //                     />
+            //                 </div>
+                            
+                            
+            //                 <button>
+            //                     <p>Post Your Item</p>
+            //                 </button>
+            //                 <Link to="/">
+            //                     <p>Cancel</p>
+            //                 </Link>
+            //                 <ImageUpload />
+            //                 <Button content='Primary' primary />
+
+            //             </form>
+            //     </div>
+            // </>
         )
     }
 }

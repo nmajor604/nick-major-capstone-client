@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import { Redirect } from "react-router-dom";
+import './Login.css';
 
 class Login extends Component {
   constructor(props) {
@@ -31,46 +31,32 @@ class Login extends Component {
   render() {
     return !this.props.user ? (
       <>
-        <div className="content__header">
-          <div>
-            <h4 className="content__header--title">Login</h4>
-          </div>
-        </div>
-        <br />
-        <br />
-        <form onSubmit={this.login}>
-          <div>
-            <div>
-              <div>
-                <label>Email: </label>
-                <input
-                  className="input"
-                  type="email"
-                  name="username"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div>
-                <label>Password: </label>
-                <input
-                  className="input"
-                  type="password"
-                  name="password"
-                  onChange={this.handleChange}
-                />
-              </div>
-              {this.state.error && (
-                <div>{this.state.error}</div>
-              )}
-              <div>
-                <button>
-                  Submit
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
-      </>
+                <div className='signup__container'>
+                    <form className="form__signup" onSubmit={this.handleSubmit}>
+                    <div><h4>Welcome Back!</h4></div>
+                    <div>
+                    <input
+                        placeholder='Enter your seller name'
+                        name='name'
+                    />
+                    </div>
+                    <div>
+                    <input
+                        placeholder='Enter your email address'
+                        name='email'
+                    />
+                    </div>
+                    
+                    <button className='ui button primary'>
+                        <p>Login</p>
+                    </button>
+                    <Link to="/">
+                        <p>Cancel</p>
+                    </Link>
+                </form>               
+                </div>
+                
+            </>
     ) : (
       <Link to="/seller-home" />
     );
