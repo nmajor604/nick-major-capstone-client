@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
@@ -11,13 +11,16 @@ import NewSeller from './Components/NewSeller/NewSeller';
 import SellerHome from './Components/SellerHome/SellerHome';
 import Footer from './Components/Footer/Footer';
 
+
 export default class App extends Component {
+
+   
 
   render() {
     return (
           <Router>
             <Header />
-              <Routes>
+              <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/listings" component={Listings} />
                 <Route exact path="/listings/:id" component={ListingDetail} />
@@ -25,7 +28,7 @@ export default class App extends Component {
                 <Route exact path="/add-item" component={NewListing} />
                 <Route exact path="/seller-signup" component={NewSeller} />
                 <Route exact path="/seller-home" component={SellerHome} />
-              </Routes>
+              </Switch>
             <Footer />
           </Router>
       );

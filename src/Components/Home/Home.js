@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import './Home.scss';
-
 function Home() {
 
   return (
@@ -13,7 +12,6 @@ function Home() {
         <div className='header__title--4'><h4>Tired of playing email tag with sellers and buyers?</h4></div>
         <div className='header__title--5'><h1>Let's CONNEX!</h1></div>
       </div>
-      
       <Link to="/listings">
         <div className='divlink'>
           <h1>Buy Something</h1>

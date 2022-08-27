@@ -60,11 +60,8 @@ class NewSeller extends React.Component {
                     <Link to="/">
                         <p>Cancel</p>
                     </Link>
-                </form>
-                            
-                            
+                </form>               
             </>
-            
         )
     }
 }

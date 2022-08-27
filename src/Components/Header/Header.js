@@ -7,10 +7,10 @@ function Header() {
 
   return (
     <header>
-      <div>
+      <div className='header__logo'>
         {/* <Link to ='/'><img alt='Connex Logo' src={logo}></img></Link> */}
       </div>
-      <div>
+      <div className='header__links'>
         <Link to ="/seller-signup"><div>SIGN UP</div></Link>
         <Link to ="/login"><div>LOGIN</div></Link>
     </div>
