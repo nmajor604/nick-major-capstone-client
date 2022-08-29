@@ -110,7 +110,7 @@ class NewListing extends React.Component {
                         <p>Cancel</p>
                     </Link>
                     <ImageUpload />
-                    <Map userLocation={this.state.userLocation} />
+                    {/* <Map userLocation={this.state.userLocation} /> */}
                 </form>               
                 </div> 
             </>
