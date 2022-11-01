@@ -33,6 +33,14 @@ To deploy this project run
     knex seed:run
 ```
 
+## Future Plans For This Project
+
+- Improve functionality of seller login, registration and product listing forms, specifically by connecting the image upload component to the rest of the listings upload form. 
+
+- Fully incorporated the Google Maps api into the product description component.
+
+- Revamp styling and page layout 
+
 ## 🚀 About Me
 I'm a full stack developer...gi
 
